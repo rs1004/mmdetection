@@ -61,7 +61,7 @@ model = dict(
 img_norm_cfg = dict(
     mean=[102.9801, 115.9465, 122.7717], std=[1.0, 1.0, 1.0], to_rgb=False)
 train_pipeline = [
-    dict(type='LoadImageFromFile'),
+    dict(type='LoadImageFromFile', to_float32=True),
     dict(type='LoadAnnotations', with_bbox=True),
     dict(type='PhotoMetricDistortion'),
     dict(type='Expand', mean=(102.9801, 115.9465, 122.7717), to_rgb=False),
